@@ -1,0 +1,154 @@
+/* rotate的属性 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+    flood-color: #222;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    background-color: #fafafa;
+    /* 旋转起始点 */
+    transform-origin: top left;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 50px;
+    transition: transform 0.6s ease-in;
+}
+
+/* 正文大模块转动 */
+.container.change {
+    transform: rotate(-20deg);
+    transition: transform 0.6s ease-in;
+}
+
+.circle-container {
+    position: fixed;
+    top: -100px;
+    left: -100px;
+}
+
+.circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(255, 121, 121);
+    border-radius: 50%;
+    transition: transform 0.3s linear;
+}
+
+/* 圆圈转动 */
+.container.change .circle {
+    transform: rotate(-70deg);
+    transition: transform 0.3s linear;
+}
+
+.circle button {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+    color: #fff;
+    border: 0;
+    background: transparent;
+}
+
+.circle button:focus {
+    outline: none;
+}
+
+
+.circle .open {
+    left: 60%;
+}
+
+
+.circle .close {
+    top: 60%;
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+
+.circle i {
+    font-size: 28px;
+}
+
+.article {
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.article h1 {
+    margin: 0;
+}
+
+.article img {
+    width: 100%;
+    /* max-width:100% */
+}
+
+.article small {
+    font-style: italic;
+    color: #555;
+}
+
+.article p {
+    color: #333;
+    line-height: 1.5;
+}
+
+/* 导航栏转动出现 */
+.container.change+.nav li {
+    transform: translateX(0);
+    transition: transform 0.6s ease-in;
+}
+
+.nav {
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    z-index: 100;
+}
+
+.nav ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.nav ul li {
+    text-transform: uppercase;
+    margin: 40px 0;
+    transform: translateX(-100%);
+    transition: transform 0.6s ease-in;
+}
+
+.nav ul li+li {
+    margin-left: 15px;
+    transform: translateX(-125%);
+}
+
+.nav ul li+li+li {
+    margin-left: 30px;
+    transform: translateX(-150%);
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}
+
+.nav i {
+    font-size: 20px;
+    color: #fff;
+    margin-right: 20px;
+}
+
+.nav a:hover {
+    color: rgb(255, 121, 121);
+}
