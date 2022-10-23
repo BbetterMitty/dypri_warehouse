@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 90vw;
+}
+
+.normal {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+    height: 90vh;
+    margin: 5px;
+    display: flex;
+    flex: 0.5;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.8s ease-in;
+}
+
+.normal h3 {
+    position: absolute;
+    color: aliceblue;
+    bottom: 10px;
+    left: 20px;
+    font-size: 24px;
+    opacity: 0;
+}
+
+.normal.show {
+    flex: 4;
+    transition: all 0.2s ease-in 0.5s;
+}
+
+.normal.show h3 {
+    opacity: 1;
+}

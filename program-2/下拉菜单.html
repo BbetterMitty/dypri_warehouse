@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下拉菜单</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .bar {
+            position: relative;
+            margin: 20px 0 0 100px;
+        }
+
+        .bar li {
+            float: left;
+            display: block;
+            height: 30px;
+            border: 1px solid #ccc;
+            line-height: 30px;
+            cursor: pointer;
+        }
+
+        .bot {
+            display: none;
+            position: absolute;
+        }
+
+        .bot li {
+            float: none;
+            background-color: cadetblue;
+            text-align: center;
+        }
+
+        .bar li:hover {
+            background-color: bisque;
+        }
+
+        .bar li:nth-child(2):hover .bot {
+            display: block;
+            /* display的block和inline-block不支持动画 */
+            /* transition: all 1s linear 50ms; */
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul class="bar">
+            <li>首页</li>
+            <li>个人主页
+                <ul class="bot">
+                    <li>账号信息</li>
+                    <li>修改密码</li>
+                    <li>空间</li>
+                </ul>
+            </li>
+            <li>售票处</li>
+            <li>退出登录</li>
+        </ul>
+    </nav>
+</body>
+
+</html>
